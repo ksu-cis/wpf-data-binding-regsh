@@ -22,5 +22,14 @@ namespace UniversityRegistry.UI
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// A proxy event handler
+        /// </summary>
+        public event SelectionChangedEventHandler SelectionChanged;
+    
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectionChanged?.Invoke(this, e);
+        }    
     }
 }
